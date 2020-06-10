@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.navbar')
 
 @section('content')
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -44,7 +44,6 @@
         </div> --}}
     </div>
 </div>
-    {{-- tutaj jakiś obraz --}}
 <div class="catalog-header">
     <div class="catalog-header-text">
         Katalog Filmów
@@ -53,7 +52,6 @@
 
 <div class="filter-bar">
     <div class="categories-header-container">
-        {{-- <div class="categories-filter-container"> --}}
             <div class="chosen-category">
                 {{ $chosen_category }}
             </div>
@@ -61,7 +59,7 @@
                 @csrf
                 <label for="categories">Kategoria: </label>
                 <select name="categories" id="categories">
-                {{-- iterate through categories? --}}
+                    <option value="Wszystkie">All</option>
                 @foreach($categories as $category)
                     <option value="{{ $category->name }}">{{ $category->name }}</option>
                 @endforeach
@@ -74,11 +72,7 @@
                     <option value="price">Ceny</option>
                 </select>
                 <div><input type="submit" value="wybierz"></div>
-                
             </form>
-        {{-- </div> --}}
-        
-        
     </div>
     <div class="sort-container">
         <form action="" method="post"></form>
@@ -103,10 +97,13 @@
                                 Cena: {{ $movie->price }}<br>
                             </article>
                         </a>
+                        <a href="{{ route('cart.add', $movie->id) }}">
+                            <div class="basket-add-container">
+                                <img src="{{ url('/images/shopping-bag-add.svg') }}">
+                            </div>
+                        </a>
                     </div>
-                    <div class="basket-add-container">
-
-                    </div>
+                    
                 </div>
             </div>
         @endforeach

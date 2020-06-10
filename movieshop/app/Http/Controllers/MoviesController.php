@@ -14,7 +14,6 @@ class MoviesController extends Controller
         $movies = Movies::orderBy('release_date', 'desc')->paginate(20);
         $categories = Categories::orderBy('name')->get();
 
-
         return view('store', ['movies'=>$movies, 'categories'=>$categories, 'chosen_category'=>'Wszystkie']);
     }
 
@@ -27,16 +26,18 @@ class MoviesController extends Controller
         $category = $request->input('categories');
         $sorting = $request->input('sort');
 
-        $movies = Movies::whereHas('categories', function($q) use($category){
+        if($category == 'Wszystkie'){
+            $movies = Movies::orderBy($sorting, 'desc')->paginate(20);
+        } else {
+            $movies = Movies::whereHas('categories', function($q) use($category){
                 $q->where('name', $category);
             }) 
             ->orderBy($sorting, 'desc')
             ->paginate(20);
-        
-        // $movies = Movies::where('name',  $category)
-        //     ->orderBy($sorting, 'desc')
-        //     ->paginate(20);
+        }
+
         $categories = Categories::all();
+
         return view('/store', ['movies'=>$movies, 'categories'=>$categories, 'chosen_category'=>$category]);
     }
 }

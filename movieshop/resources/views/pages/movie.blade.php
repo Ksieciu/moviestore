@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.navbar')
 
 @section('content')
     <div class="back-button-container">

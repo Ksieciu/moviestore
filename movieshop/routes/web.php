@@ -22,6 +22,9 @@ Route::get('/about', function(){
     return view('pages.about');
 });
 
+Route::get('/add/{movie}', 'CartController@addToCart')->name('cart.add');
+
 Route::get('/movies', 'MoviesController@show_all');
 Route::post('/movies', 'MoviesController@show_by_category');
+
 Route::get('/movies/{movie}', 'MoviesController@show_one_movie');

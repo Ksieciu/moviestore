@@ -74,17 +74,10 @@ nav a{
     width: 5.5vh;
     border-radius: 1.8vh;
     display: flex;
-    /* flex-direction: row; */
     align-items: center;
 }
 
 #search-navbar-input{
-    /* display: flex;
-    height: px;
-    border-radius: 15px;
-    background-color: tomato;
-    border: 1px;
-    width: 100%; */
     padding: 1.5vh;
     text-rendering: auto;
     letter-spacing: normal;
@@ -121,7 +114,7 @@ nav a{
 };
 
 .slider-wrapper{
-    /* overflow:hidden; */
+    overflow:hidden;
 }
 
 .image-top{
@@ -161,17 +154,9 @@ nav a{
     color: whitesmoke;
 }
 
-.categories-filter-container{
-    
-}
-
 .chosen-category{
     display: inline-block;
     font-size: 3vh;
-
-}
-
-#categories{
 
 }
 
@@ -182,39 +167,7 @@ nav a{
     padding: 2vh;
 }
 
-/* .categories-container{
-    width: 13%;
-    background-color: #b3b3b3;
-
-    margin-right: 1vh;
-}
-
-.categories-box{
-    display: flex;
-
-}
-.filter-text{
-    margin-left: 2vh;
-    float: left;
-}
-
-.categories-list{
-    margin-bottom:2vh;
-}
-
-.category-box{
-    margin-left: 2vh;
-    margin-bottom: 0.5vh;
-
-}
-
-.category-box a{
-    color: black;
-    text-decoration: none;
-} */
-
 .movies-list-container{
-    /* display: flex; */
     align-content: center;
     width: 100%;
     margin: 2vh;
@@ -242,11 +195,8 @@ nav a{
     color: black;
 }
 
-.movie-picture-container{
-    /* display: table-cell;
-    align-content: center;
-    vertical-align: middle; */
 
+.movie-picture-container{
     text-align: center;
     background-color: #1f1f1f;
     width: 100%;
@@ -275,11 +225,9 @@ nav a{
     max-height:100%;
 }
 
-.movie-info-container{
-    
-}
-
 .movie-title{
+    overflow: hidden;
+    max-height: 23.5px;
     background-color: silver;
     color: black;
     text-align: center;
@@ -291,6 +239,41 @@ nav a{
     margin-bottom: 1vh;
 }
 
+.basket-add-container{
+    padding: 1.8vh;
+    padding-right: 1.3vh;
+    width: 10%;
+    float: right;
+}
+
+@media only screen and (max-height: 700px){
+    .movie-container{
+        background-color: whitesmoke;
+        float: left;
+        width: 17.55%;
+        height: 25rem;
+        margin: 1vh;
+        padding: 1vh;
+    }
+
+    .basket-add-container{
+        position: absolute;
+        padding: 1vh;
+        width: 7%;
+        float: right;
+    }
+}
+
+@media only screen and (max-height: 900px and min-height: 700px){
+    .movie-container{
+        background-color: whitesmoke;
+        float: left;
+        width: 17.55%;
+        height: 29rem;
+        margin: 1vh;
+        padding: 1vh;
+    }
+}
 
 @media only screen and (max-width: 1200px){
     .inner-page-container{
@@ -306,7 +289,7 @@ nav a{
         display: grid;
         justify-items: center;
         width: 80%;
-        height: 53vh;
+        height: 60vh;
         margin: 1vh;
         padding: 1vh;
     }
