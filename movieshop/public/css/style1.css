@@ -240,11 +240,65 @@ nav a{
 }
 
 .basket-add-container{
+    overflow: visible;
     padding: 1.8vh;
     padding-right: 1.3vh;
     width: 10%;
     float: right;
 }
+
+.basket-add-container img{
+    overflow: visible;
+    width:100%;
+}
+
+.cart-list-container{
+    background-color: #1f1f1f;
+    width: 100%;
+    margin: 2vh;
+    margin-top: 0px;
+    border: solid 0.6vh whitesmoke;
+}
+
+.cart-main-container{
+    background-color: whitesmoke;
+    width: 100% - 0.6vh;
+    margin: 1vh;
+    padding: 1vh;
+}
+
+.cart-main-container a{
+    text-decoration: none;
+    color: black;
+}
+
+.item-picture-container{
+    text-align: center;
+    background-color: #1f1f1f;
+    height: 100%;
+    width: auto;
+}
+
+/* .item-picture-container:before{
+    content: '';
+    height: 100%;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.item-picture-container:after{
+    content: '';
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+} */
+
+/* .item-picture-container img{
+    vertical-align: middle;
+    max-height:95%;
+    float: left;
+} */
 
 @media only screen and (max-height: 700px){
     .movie-container{
@@ -255,12 +309,17 @@ nav a{
         margin: 1vh;
         padding: 1vh;
     }
-
     .basket-add-container{
-        position: absolute;
-        padding: 1vh;
-        width: 7%;
+        overflow: visible;
+        padding: 1.8vh;
+        padding-right: 1.3vh;
+        width: 10%;
         float: right;
+    }
+    
+    .basket-add-container img{
+        overflow: visible;
+        width:100%;
     }
 }
 
@@ -288,7 +347,7 @@ nav a{
         float: none;
         display: grid;
         justify-items: center;
-        width: 80%;
+        width: 91%;
         height: 60vh;
         margin: 1vh;
         padding: 1vh;

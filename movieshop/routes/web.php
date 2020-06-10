@@ -22,9 +22,9 @@ Route::get('/about', function(){
     return view('pages.about');
 });
 
-Route::get('/add/{movie}', 'CartController@addToCart')->name('cart.add');
-
-Route::get('/movies', 'MoviesController@show_all');
+Route::get('/movies', 'MoviesController@show_all')->name('movie.store');
 Route::post('/movies', 'MoviesController@show_by_category');
-
 Route::get('/movies/{movie}', 'MoviesController@show_one_movie');
+
+Route::get('/add/{movie}', 'CartController@addToCart')->name('cart.add');
+Route::get('/cart', 'CartController@showCart')->name('cart.show');

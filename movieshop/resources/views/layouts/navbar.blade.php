@@ -26,10 +26,17 @@
                     </ul>
                 </div>
                 <div class="navbar-site-logo">
-                    <a id="site-logo" href="#">Movie Store</a>
+                    <a id="site-logo" href="{{ route('movie.store') }}">Movie Store</a>
                 </div>
                 <ul class="nav-right">
-                    <li class="navbar-basket"><a href="#">Basket</a></li>
+                    <li class="navbar-basket">
+                        <a href="{{ route('cart.show') }}">
+                            <img src="{{ url('/images/shopping-bag-add.svg') }}" alt="">
+                            <span class="badge">
+                                {{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}
+                            </span>
+                        </a>
+                    </li>
                     <li class="dropdown-account-menu"> |||
                         <ul class="dropdown-account-list">
                             <li>Log In/Sign In</li>
