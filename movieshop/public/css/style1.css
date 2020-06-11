@@ -325,18 +325,6 @@ nav a{
     justify-content: space-between;
 }
 
-.item-header-quantity{
-    /* width: 50%; */
-}
-
-.item-header-price{
-    /* width: 50%; */
-}
-
-.item-header-remove{
-    /* float:right; */
-}
-
 .cart-main-container{
     background-color: #1f1f1f;
     width: 100% - 0.6vh;
@@ -400,9 +388,6 @@ nav a{
     margin-right: 3.5%;
     width: 5%;
     height: 10%;
-}
-.remove-item img{
-    /* max-height: 20%; */
 }
 
 .item-picture-container{

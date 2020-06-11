@@ -31,8 +31,19 @@ class CartController extends Controller
 
     }
 
-    // function updateCart($id){
+    function removeFromCart($id){
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
 
-    // }
+        //check if there is any item left in session cart, if not then cart clear session data
+        if(count($cart->items) > 0){
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+
+        return redirect()->route('cart.show');
+    }
 
 }

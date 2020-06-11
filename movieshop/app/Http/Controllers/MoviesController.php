@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Movies;
 use App\Categories;
 
+
 class MoviesController extends Controller
 {
     function show_all(){
@@ -17,10 +18,18 @@ class MoviesController extends Controller
         return view('store', ['movies'=>$movies, 'categories'=>$categories, 'chosen_category'=>'Wszystkie']);
     }
 
+
     function show_one_movie($id){
         $movie = Movies::find($id);
-        return view('pages.movie')->with('movie', $movie);
+        // $categories = Categories::whereHas('movies', function($q) use($id){
+        //     $q->where('id', $id);
+        // });
+        
+        $categories = $movie->Categories;
+
+        return view('pages.movie', ['movie'=>$movie, 'categories'=>$categories]);
     }
+
 
     function show_by_category(Request $request){
         $category = $request->input('categories');
@@ -37,7 +46,6 @@ class MoviesController extends Controller
         }
 
         $categories = Categories::all();
-
         return view('/store', ['movies'=>$movies, 'categories'=>$categories, 'chosen_category'=>$category]);
     }
 }

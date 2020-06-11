@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="movie-non-clickable-container">
                     <div class="movie-container">
-                        <a href="/movies/{{ $movie->id }}">
+                        <a href="{{ route('movie.show', $movie->id) }}">
                             <div class = "movie-picture-container">
                                 <img src="{{ $movie->picture }}">
                             </div>
@@ -97,7 +97,7 @@
                                 Cena: {{ $movie->price }}<br>
                             </article>
                         </a>
-                        <a href="{{ route('cart.add', $movie->id) }}">
+                        <a href="{{ route('cart.add', $movie->id) }}" id="add-to-basket">
                             <div class="basket-add-container">
                                 <img src="{{ url('/images/shopping-bag-add.svg') }}">
                             </div>

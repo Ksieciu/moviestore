@@ -35,7 +35,9 @@
                                 </div>
                                 {{-- <a href="{{ route('cart.update', $movie->id, $) }}"> --}}
                                     <div class="remove-item">
-                                        <img src="{{ url('/images/recycle-bin.svg') }}" alt="">
+                                        <a href="{{ route('cart.remove', $product['item']['id']) }}">
+                                            <img src="{{ url('/images/recycle-bin.svg') }}">
+                                        </a>
                                     </div>
                                 {{-- </a> --}}
                             </div>
@@ -59,39 +61,43 @@
             </div>
         </div>
     </div>
+
     @else
-
-    @endif
-
-    
-
-@endsection
-
-
-{{-- @section('content')
-    @if(Session::has('cart'))
-    <div class="inner-page-container">
+    <div class="cart-inner-page-container">
         <div class="cart-list-container">
             <div class="cart-main-container">
+                <div class="cart-items-header">
+                    <div class="item-header">Produkt</div>
+                    <div class="item-header-numbers">
+                        <div class="item-header-quantity">Ilość</div>
+                        <div class="item-header-price">Cena</div>
+                    </div>
+                    <div class="item-header-remove">Usuń</div>
+                </div>
                 <div class="items-cart-container">      
-                @foreach($products as $product)
                     <div class="row">
                         <div class="item-container">
-                            <div class = "item-picture-container">
-                                <img src="{{ $product['item']['picture'] }}">
+                            <div class="item-container-info">
+                                Koszyk jest pusty!
                             </div>
-                                <div class="item-title">{{ $product['item']['title'] }}</div>
                         </div>
                     </div>
-                @endforeach
+                </div>
+            </div>
+        </div>
+        <div class="cart-right-info-container">
+            <div class="cart-summary-header">Podsumowanie</div>
+            <div class="cart-summary-container">
+                
+            </div>
+            <div class="cart-summary">
+                <div class="summary-span-container">
+                    <span class="shipping-cost">Koszt dostawy: 12.99</span><br>
+                    <span class="Final-cost">Koszt całkowity: 12.99</span>
                 </div>
             </div>
         </div>
     </div>
-    @else
-
     @endif
 
-    
-
-@endsection --}}
+@endsection
