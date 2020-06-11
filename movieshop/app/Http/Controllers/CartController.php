@@ -31,4 +31,8 @@ class CartController extends Controller
 
     }
 
+    // function updateCart($id){
+
+    // }
+
 }

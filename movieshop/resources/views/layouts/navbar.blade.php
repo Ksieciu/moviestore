@@ -29,20 +29,26 @@
                     <a id="site-logo" href="{{ route('movie.store') }}">Movie Store</a>
                 </div>
                 <ul class="nav-right">
+                    <li class="navbar-home">
+                        <a href="{{ route('movie.store') }}">
+                            <img src="{{ url('/images/home.svg') }}">
+                        </a>
+                    </li>
                     <li class="navbar-basket">
                         <a href="{{ route('cart.show') }}">
-                            <img src="{{ url('/images/shopping-bag-add.svg') }}" alt="">
-                            <span class="badge">
+                            <img src="{{ url('/images/shopping-bag-add.svg') }}">
+                            <span>
                                 {{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}
                             </span>
                         </a>
                     </li>
-                    <li class="dropdown-account-menu"> |||
-                        <ul class="dropdown-account-list">
+                    <li class="dropdown-account-menu"> 
+                        <img src="{{ url('images/account.svg') }}">
+                        {{-- <ul class="dropdown-account-list">
                             <li>Log In/Sign In</li>
                             <li>My Account</li>
                             <li>About</li>
-                        </ul>
+                        </ul> --}}
                     </li>
                 </ul>
             </nav>

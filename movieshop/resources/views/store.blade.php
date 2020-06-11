@@ -110,7 +110,9 @@
         </div>
     </div>
     <div class="pagination-container">
-        {{ $movies->links() }}
+        <div class="paginate-inside">
+            {{ $movies->links() }}
+        </div>
     </div>
     
 </div>

@@ -28,3 +28,4 @@ Route::get('/movies/{movie}', 'MoviesController@show_one_movie');
 
 Route::get('/add/{movie}', 'CartController@addToCart')->name('cart.add');
 Route::get('/cart', 'CartController@showCart')->name('cart.show');
+// Route::post('/cart/update/{movie}', 'CartController@update')->('cart.update');

@@ -31,4 +31,8 @@ class Cart
        $this->totalPrice += $item->price;
    }
 
+//    public function update($id){
+//         $this->items[$id]['qty']
+//    }
+
 }
