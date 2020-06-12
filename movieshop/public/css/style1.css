@@ -446,6 +446,96 @@ nav a{
     padding: 1vh;
 }
 
+.movie-info-page-header{
+    margin-top: 2%;
+    color: whitesmoke;
+    font-size: 3vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.movie-info-inner-page-container{
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+    margin: 8%;
+    margin-bottom: 0;
+    margin-top: 1%;
+}
+
+.movie-all-info-border{
+    background-color: #1f1f1f;
+    width: 100%;
+    border: solid 0.6vh whitesmoke;
+}
+
+.movie-all-info-container{
+    display: flex;
+    background-color: whitesmoke;
+    border: solid 1vh #1f1f1f;
+}
+
+.movie-info-picture-container{
+    height: 100%;
+    min-width: 20%;
+    max-width: 25%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.movie-info-picture{
+    background-color: #1f1f1f;
+    height: 100%;
+    width: 100%;
+    padding: 1%;
+    padding-right: 2%;
+}
+
+.movie-info-picture img{
+    height: 100%;
+    width: 100%;
+    background-color: #1f1f1f;
+
+}
+
+.movie-article-all-info{
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 2%;
+    width: 100%;
+}
+
+.movie-description-container{
+    min-width: 75%;
+}
+
+.movie-info-basket{
+    /* display: flex; */
+    overflow: visible;
+    padding: 1.8vh;
+    padding-right: 1.3vh;
+    width: 100%;
+    float: right;
+    vertical-align: bottom;
+}
+
+.movie-info-basket a{
+    text-decoration: none;
+    color: black;
+    float: right;
+}
+
+.movie-info-add-to-cart{
+    /* display: flex; */
+    width: 100%;
+    /* float: right; */
+}
+
+.movie-info-add-to-cart img{
+    width: 20%;
+}
+
+
 @media only screen and (max-height: 700px){
     .movie-container{
         background-color: whitesmoke;
@@ -469,7 +559,7 @@ nav a{
     }
 }
 
-@media only screen and (max-height: 900px and min-height: 700px){
+@media only screen and (max-height: 900px) and (min-height: 700px){
     .movie-container{
         background-color: whitesmoke;
         float: left;

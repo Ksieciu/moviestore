@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="movie-non-clickable-container">
                     <div class="movie-container">
-                        <a href="{{ route('movie.show', $movie->id) }}">
+                        <a href="{{ route('show.movie', $movie->id) }}">
                             <div class = "movie-picture-container">
                                 <img src="{{ $movie->picture }}">
                             </div>
