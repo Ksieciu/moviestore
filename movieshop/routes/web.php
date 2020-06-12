@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('store');
+    return redirect('/movies');
 });
 
 
-Route::get('/about', function(){
-    return view('pages.about');
-});
+// Route::get('/about', function(){
+//     return view('pages.about');
+// });
 
 Route::get('/movies', 'MoviesController@show_all')->name('movie.store');
 Route::post('/movies', 'MoviesController@show_by_category');
