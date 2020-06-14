@@ -11,7 +11,6 @@ use App\Categories;
 class MoviesController extends Controller
 {
     function show_all(){
-        // $movies = DB::table('movies')->paginate(20);
         $movies = Movies::orderBy('release_date', 'desc')->paginate(20);
         $categories = Categories::orderBy('name')->get();
 
@@ -21,10 +20,6 @@ class MoviesController extends Controller
 
     function show_one_movie($id){
         $movie = Movies::find($id);
-        // $categories = Categories::whereHas('movies', function($q) use($id){
-        //     $q->where('id', $id);
-        // });
-        
         $categories = $movie->Categories;
 
         return view('pages.movie', ['movie'=>$movie, 'categories'=>$categories]);

@@ -17,11 +17,6 @@ Route::get('/', function () {
     return redirect('/movies');
 });
 
-
-// Route::get('/about', function(){
-//     return view('pages.about');
-// });
-
 Route::get('/movies', 'MoviesController@show_all')->name('movie.store');
 Route::post('/movies', 'MoviesController@show_by_category');
 Route::get('/movies/{movie}', 'MoviesController@show_one_movie')->name('show.movie');
