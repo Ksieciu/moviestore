@@ -20,6 +20,7 @@ class CartController extends Controller
         return redirect()->route('movie.store');
     }
     
+    
     function showCart(){
         if(!Session::has('cart')){
             return view('pages.shopping-cart');
@@ -28,8 +29,8 @@ class CartController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         return view('pages.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
-
     }
+
 
     function removeFromCart($id){
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
