@@ -45,7 +45,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/admin/movies/{movie}', 'AdminPanelController@show_movie')->name('admin.showMovie');
     Route::put('/admin/movies/{movie}', 'AdminPanelController@update_movie')->name('admin.updateMovie');
     Route::post('/admin/movies/{movie}', 'AdminPanelController@add_category_to_movie')->name('admin.addCategory');
-    Route::delete('/admin/movies/{movie}/category', 'AdminPanelController@delete_movie_category')->name('admin.deleteCategory');
+    Route::delete('/admin/movies/{movie}/{category}', 'AdminPanelController@delete_movie_category')->name('admin.deleteCategory');
     Route::delete('/admin/movies/{movie}', 'AdminPanelController@delete_movie')->name('admin.deleteMovie');
     // Route::get('/admin/accounts', controller)->('admin.accounts');
     // Route::get('/admin/orders', controller); ???

@@ -45,14 +45,14 @@
                             Kategorie:<br> 
                             @foreach($movie_categories as $movie_category)
                                 @if (!$loop->last)
-                                    <form action="{{route('admin.deleteCategory', $movie->id, $movie_category->id)}}" method="POST">
+                                    <form action="{{route('admin.deleteCategory', [$movie->id, $movie_category->id])}}" method="POST">
                                         {{ $movie_category->name }}
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit">Delete</button>               
                                     </form>
                                 @else
-                                    <form action="{{route('admin.deleteCategory', $movie->id, $movie_category->id)}}" method="POST">
+                                    <form action="{{route('admin.deleteCategory', [$movie->id, $movie_category->id])}}" method="POST">
                                         {{ $movie_category->name }}
                                         @method('DELETE')
                                         @csrf

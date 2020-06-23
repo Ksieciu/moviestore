@@ -49,7 +49,10 @@ class AdminPanelController extends Controller
         $movie = Movies::find($movie_id);
         $movie->categories()->detach($category_id);
 
-        return redirect()->route('admin.listMovies');
+        $movie_categories = $movie->Categories;
+        $categories = Categories::all();
+
+        return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
     }
 
     function delete_movie($id){
