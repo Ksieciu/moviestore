@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 // odpowiedzialny za logowanie/rejestrację
 Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
 
 //wyświetlanie filmów
 Route::get('/movies', 'MoviesController@show_all')->name('movie.store');
@@ -32,6 +33,21 @@ Route::get('/cart/remove/{movie}', 'CartController@removeFromCart')->name('cart.
 // Route::post('/cart/update/{movie}', 'CartController@update')->('cart.update');
 
 //checkout
-Route::get('/checkout', 'CheckoutController@')->name('checkout')->middleware('auth');
+// Route::get('/checkout', 'CheckoutController@')->name('checkout')->middleware('auth');
+
+
+//Admin panel routes with authorization
+Route::middleware('admin')->group(function(){
+    Route::view('/admin', 'pages/admin');
+
+    // list of future admin routes
+    // Route::get('/admin/movies', controller);
+    // Route::get('/admin/movies/{movie}', controller);
+    // Route::post('/admin/movies/{movie}, updateMovie@controller);
+    // Route::get('/admin/accounts', controller);
+    // Route::get('/admin/orders', controller); ???
+
+});
+
 
 
