@@ -9,4 +9,8 @@ class Movies extends Model
     public function categories(){
         return $this->belongsToMany('App\Categories');
     }
+
+    public function order(){
+        return $this->belongsToMany('App\Order');
+    }
 }
