@@ -141,14 +141,42 @@ nav a{
 
      }
 
-     .form-check{
-        
+     .wrapper-admin{
+        margin-left: 15%;
+        margin-right: 15%;
      }
 
-     .label-style {
-
+     .container-1 {
+        background-color: white;
+        color: black;
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: 1.5em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 10px;
+        float: left;
+        width: 45%;
+        height: 50%;
+        
         
      }
+     .container-2 {
+        background-color: white;
+        color: black;
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: 1.5em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 10px;
+        float: right;
+        width: 45%;
+        height: 50%;
+
+     }
+
+    
 
      .form-control {
         
@@ -175,10 +203,10 @@ nav a{
      }
 
 
-     .btn-login {
+     .btn-add .btn-login {
         background-color: white;
         color: black;
-        font-size: 0.6em;
+        font-size: 0.8em;
         border-radius: 8px;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
         padding: 0.25em 0.75em;
@@ -193,7 +221,7 @@ nav a{
     text-emphasis: bold;
      }
 
-     .btn-login:hover {
+     .btn-add .btn-login:hover {
          background-color: green;
          color: white;
          border: green;
@@ -202,13 +230,29 @@ nav a{
      button {
         background-color: white;
         color: black;
-        font-size: 0.6em;
+        font-size: 0.8em;
         border-radius: 8px;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
         padding: 0.25em 0.75em;
         min-width: 10ch;
         min-height: 44px;
-        display: inline-flex;
+        
         align-items: center;
+        font-family: 'Cinzel', serif;
+        text-align: center;
+        cursor: pointer;
 
      }
+
+     .a:hover {
+        background-color: green;
+        color: white;
+        border: green;
+    }
+
+    button:hover{
+            background-color: green;
+            color: white;
+            border: green;
+        }
+    }

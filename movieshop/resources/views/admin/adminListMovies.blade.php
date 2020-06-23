@@ -1,7 +1,10 @@
 @extends('layouts.navbar')
 
 @section('content')
-    
+<link href={{ asset('css/admin.css') }} rel="stylesheet">
+ 
+<div class="login-header">{{ __('Katalog filmów') }}</div>
+
 <div class="page-container">
     <div class="inner-page-container">
 
@@ -30,8 +33,11 @@
         <div class="paginate-inside">
             {{ $movies->links() }}
         </div>
+        <button type="submit" class="btn-add">
+            {{ __(' + Dodaj film') }}
+        </button><br> 
     </div>
-    
+   
 </div>
 
 @endsection
