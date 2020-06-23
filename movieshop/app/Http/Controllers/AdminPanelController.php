@@ -62,8 +62,14 @@ class AdminPanelController extends Controller
         return redirect()->route('admin.listMovies');
     }
 
-    function add_category_to_movie($id){
-        
+    function add_category_to_movie(Request $request, $movie_id){
+        $movie = Movies::find($movie_id);
+        $movie->categories()->attach($request->input('categories'));
+
+        $movie_categories = $movie->Categories;
+        $categories = Categories::all();
+
+        return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
     }
 
 
