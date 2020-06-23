@@ -1,0 +1,198 @@
+body{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    background: #2c2c2c;
+}
+
+header{
+    min-height: 6vh;
+    max-height: 6vh;
+    background: #2c2c2c;
+}
+
+
+.movie-navbar{
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 6vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.movie-navbar img{
+    filter: brightness(0) invert(1);
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-left{
+    margin-left: 8%;
+    /* display: flex;
+    justify-content: space-around; */
+    width: 15%;
+    float: left;
+    letter-spacing: 0.1vh;
+    list-style: none;
+}
+
+.nav-right{
+    margin-right: 9%;
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+    float: right;
+    letter-spacing: 0.1vh;
+    list-style: none;
+}
+
+.nav-right img{
+    height: 3vh;
+}
+
+.navbar-home{
+    margin-right: 2%;
+}
+
+.navbar-site-logo{
+    margin-left: 2%;
+    color: white;
+    letter-spacing: 0.3vh;
+    font-size: 1.8vh;
+}
+
+
+
+.nav-left ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.searchBox-container{
+    /* height: 3.6vh; */
+    /* width: 10%; */
+    border-radius: 1.8vh;
+    display: flex;
+    /* align-items: center; */
+}
+
+#search-navbar-input{
+    padding: 1.5vh;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    cursor: text;
+    width: auto;
+    height: 3.6vh;
+    border-radius: 1.8vh;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+}
+
+ 
+    
+     .login-wrapper{
+        padding-top: 10em;
+        padding-bottom: 3em;
+        white-space: normal;
+        overflow: hidden;
+        position: relative;
+        
+     }
+    
+     .login-box {
+         text-align: center;
+         font-size: 1.2em;
+         padding: 5em 5em 5em 5em;
+         background-color: white;
+         margin-left: 15%;
+         margin-right: 15%;
+         color: black;
+         border-radius: 10px;
+         
+     }
+
+     .login-header{
+        background-color: white;
+        color: black;
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: 1.5em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 10px;
+
+     }
+
+     .form-check{
+        
+     }
+
+     .label-style {
+
+        
+     }
+
+     .form-control {
+        
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-left: 0px,50px;
+        color:black ;
+        white-space: nowrap;
+        resize: vertical;
+        text-align: center;
+        font-size: 0.8em;
+        overflow: auto;
+        width: 60%;
+     }
+
+     .form-control:focus{
+        border: 2px solid green;
+        border-radius: 4px;
+        box-sizing: border-box;
+        outline: yellowgreen;
+     }
+
+
+     .btn-primary {
+        background-color: white;
+        color: black;
+        font-size: 0.6em;
+        border-radius: 8px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+        padding: 0.25em 0.75em;
+        min-width: 10ch;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    
+       cursor: pointer;
+    text-emphasis: bold;
+     }
+
+     .btn-primary:hover {
+         background-color: green;
+         color: white;
+         border: green;
+     }
