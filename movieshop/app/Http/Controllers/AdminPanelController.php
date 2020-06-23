@@ -20,7 +20,7 @@ class AdminPanelController extends Controller
         $movie = Movies::find($id);
         $movie->delete();
 
-        return self::show_all();
+        return redirect()->route('admin.listMovies');
     }
 
     function edit_movie($id){
