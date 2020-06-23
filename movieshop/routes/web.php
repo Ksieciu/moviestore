@@ -40,11 +40,12 @@ Route::get('/cart/remove/{movie}', 'CartController@removeFromCart')->name('cart.
 Route::middleware('admin')->group(function(){
     Route::view('/admin', 'pages/admin');
 
-    // list of future admin routes
-    // Route::get('/admin/movies', controller);
-    // Route::get('/admin/movies/{movie}', controller);
+    // list of admin routes
+    Route::get('/admin/movies', 'AdminPanelController@show_all')->name('admin.listMovies');
+    Route::get('/admin/movies/{movie}', 'AdminPanelController@edit_movie')->name('admin.editMovie');
+    Route::delete('/admin/movies/{movie}', 'AdminPanelController@delete_movie')->name('admin.deleteMovie');
     // Route::post('/admin/movies/{movie}, updateMovie@controller);
-    // Route::get('/admin/accounts', controller);
+    // Route::get('/admin/accounts', controller)->('admin.accounts');
     // Route::get('/admin/orders', controller); ???
 
 });
