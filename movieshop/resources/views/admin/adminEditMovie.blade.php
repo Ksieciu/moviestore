@@ -60,12 +60,12 @@
                                     </form><br>
                                 @endif
                             @endforeach
-                            <form method="POST" class="categories-add-form">
+                            <form  method="POST" class="categories-add-form">
                                 @csrf
                                 <label for="categories">Dodaj kategorie: </label><br>
                                 <select name="categories" id="categories">
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                                 </select>
                                 <div><button type="submit" name="add_category">Add</div>
