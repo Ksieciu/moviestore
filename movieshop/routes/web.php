@@ -38,7 +38,7 @@ Route::get('/cart/remove/{movie}', 'CartController@removeFromCart')->name('cart.
 
 //Admin panel routes with authorization
 Route::middleware('admin')->group(function(){
-    Route::view('/admin', 'pages/admin');
+    Route::view('/admin', 'admin/admin');
 
     // list of admin routes
     Route::get('/admin/movies', 'AdminPanelController@show_all')->name('admin.listMovies');
