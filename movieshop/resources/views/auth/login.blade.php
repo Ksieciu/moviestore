@@ -1,7 +1,4 @@
-
-
 @extends('layouts.navbar')
-
 
 @section('content')
 <link href={{ asset('css/auth.css') }} rel="stylesheet">

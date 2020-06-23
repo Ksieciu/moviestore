@@ -1,5 +1,5 @@
 {{-- we should extends here our layout --}}
-@extends('layouts.app')
+@extends('layouts.navbar')
 
 @section('content')
 <div class="container">

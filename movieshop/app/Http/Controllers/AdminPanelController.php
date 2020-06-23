@@ -16,6 +16,42 @@ class AdminPanelController extends Controller
         return view('admin.adminlistMovies', ['movies'=>$movies]);
     }
 
+    
+
+    function show_movie($id){
+        $movie = Movies::find($id);
+        $movie_categories = $movie->Categories;
+        $categories = Categories::all();
+
+        return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
+    }
+
+    function update_movie(Request $request, $id){
+
+        // if($request->has('update_info')){
+        // }
+        $movie = Movies::find($id);
+        $movie->title = $request->input('title');
+        $movie->picture = $request->input('picture');
+        $movie->release_date = $request->input('release_date');
+        $movie->price = $request->input('price');
+        $movie->description = $request->input('description');
+        $movie->save();
+        $movie_categories = $movie->Categories;
+        $categories = Categories::all();
+
+        return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
+        
+    }
+
+
+    function delete_movie_category($movie_id, $category_id){
+        $movie = Movies::find($movie_id);
+        $movie->categories()->detach($category_id);
+
+        return redirect()->route('admin.listMovies');
+    }
+
     function delete_movie($id){
         $movie = Movies::find($id);
         $movie->delete();
@@ -23,11 +59,8 @@ class AdminPanelController extends Controller
         return redirect()->route('admin.listMovies');
     }
 
-    function edit_movie($id){
-        $movie = Movies::find($id);
-        $categories = $movie->Categories;
-
-        return view('admin.adminEditMovie', ['movie'=>$movie, 'categories'=>$categories]);
+    function add_category_to_movie($id){
+        
     }
 
 

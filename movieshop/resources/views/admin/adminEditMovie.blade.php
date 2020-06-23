@@ -12,23 +12,64 @@
                         </div>
                     </div>
                     <article class="movie-article-all-info">
-                        <div class="movie-title-container">
-                            Tytuł:<br> {{ $movie->title }}</div><br>
-                        <div class="movie-realese-date-container">
-                            Data Premiery:<br>
-                            {{ $movie->release_date }}</div><br>
+                        <form method="POST">
+                            @method('PUT')
+                            @csrf
+                            <div class="movie-icon-url-container">
+                                Url plakatu:<br>
+                                <input class="input-box-details" name="picture" value="{{ $movie->picture}}">
+                            </div><br>
+                            <div class="movie-title-container">
+                                Tytuł:<br> 
+                                <input class="input-box-details" name="title" value="{{ $movie->title}}">
+                            </div><br>
+                            <div class="movie-realese-date-container">
+                                Data Premiery:<br>
+                                <input type="date" class="input-box-details" name="release_date" value="{{ $movie->release_date }}">
+                            </div><br>
+                            <div class="movie-realese-date-container">
+                                Cena:<br>
+                                <input type="number" step="0.01" class="input-box-details" name="price" value="{{ $movie->price }}">
+                            </div><br>
+                            
+                            <div class="movie-description-container">
+                                Opis: <br>
+                                <input class="input-box-details" name="description" value="{{ $movie->description}}">
+                            </div><br>
+                            <button type="submit" class="update-btn" value="Update Movie" name="update_info">Update Movie</button>
+                        </form><br>
+
+                        <form method="POST"></form>
+                        @csrf
                         <div class="movie-categories-container">
                             Kategorie:<br> 
-                            @foreach($categories as $category)
+                            @foreach($movie_categories as $movie_category)
                                 @if (!$loop->last)
-                                {{ $category->name }},
+                                    <form action="{{route('admin.deleteCategory', $movie->id, $movie_category->id)}}" method="POST">
+                                        {{ $movie_category->name }}
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit">Delete</button>               
+                                    </form>
                                 @else
-                                {{ $category->name }}
+                                    <form action="{{route('admin.deleteCategory', $movie->id, $movie_category->id)}}" method="POST">
+                                        {{ $movie_category->name }}
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit">Delete</button>               
+                                    </form><br>
                                 @endif
                             @endforeach
-                        </div><br>
-                        <div class="movie-description-container">
-                            Opis: <br>{{ $movie->description }}
+                            <form method="POST" class="categories-add-form">
+                                @csrf
+                                <label for="categories">Dodaj kategorie: </label><br>
+                                <select name="categories" id="categories">
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                @endforeach
+                                </select>
+                                <div><button type="submit" name="add_category">Add</div>
+                            </form>
                         </div><br>
                     </article>
                 </div>

@@ -1,5 +1,5 @@
 {{-- we should extends here our layout --}}
-@extends('layouts.app') 
+@extends('layouts.navbar')
 
 @section('content')
 <div class="container">
@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf
-
+                        
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group row">

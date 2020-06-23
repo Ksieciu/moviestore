@@ -13,7 +13,7 @@
                         <div class = "movie-picture-container">
                             <img src="{{ $movie->picture }}">
                         </div>
-                        <a href="{{ route('admin.editMovie', $movie->id) }}">EDIT</a>
+                        <a href="{{ route('admin.showMovie', $movie->id) }}">EDIT</a>
                         {{-- <a href="{{ route('admin.deleteMovie', $movie->id) }}">DELETE</a> --}}
                         <form action="{{route('admin.deleteMovie', $movie->id)}}" method="POST">
                             @method('DELETE')
