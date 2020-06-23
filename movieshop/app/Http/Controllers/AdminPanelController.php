@@ -20,7 +20,7 @@ class AdminPanelController extends Controller
         $movie = Movies::find($id);
         $movie->delete();
 
-        return show_all();
+        return self::show_all();
     }
 
     function edit_movie($id){
