@@ -11,7 +11,7 @@ use App\Categories;
 class AdminPanelController extends Controller
 {
     function show_all(){
-        $movies = Movies::orderBy('name', 'asc')->paginate(20);
+        $movies = Movies::orderBy('title', 'asc')->paginate(20);
 
         return view('admin.adminlistMovies', ['movies'=>$movies]);
     }
