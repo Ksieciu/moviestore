@@ -66,33 +66,11 @@ class AdminPanelController extends Controller
     // find movie by given id, then take category id from request and attach both to create pivot if no such pivot exists
     function add_category_to_movie(Request $request, $movie_id){
         $movie = Movies::find($movie_id);
-        $check = false;
-
-        // if(!(in_array($request->input('categories'), $movie->Categories))){
-        //     $movie->categories()->attach($request->input('categories'));
-        // }
-        foreach($movie->Categories as $category){
-            if($category == $request->input('categories')){
-                $check = True;
-                break;
-            }
-        }
-        
-        if($check == false){
-            $movie->categories()->attach($request->input('categories'));
-        }
+        $movie->categories()->attach($request->input('categories'));
 
         $movie_categories = $movie->Categories;
         $categories = Categories::all();
-
-        // $movie = Movies::find($movie_id);
-        // $movie->categories()->attach($request->input('categories'));
-
-        // $movie_categories = $movie->Categories;
-        // $categories = Categories::all();
-
-        // return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
-
+        
         return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
     }
 

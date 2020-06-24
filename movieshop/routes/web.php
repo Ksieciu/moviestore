@@ -62,6 +62,9 @@ Route::middleware('admin')->group(function(){
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
+Route::fallback(function(){
+    return "Wygląda na to, że zawędrowałeś za daleko!";
+});
 
 
 
