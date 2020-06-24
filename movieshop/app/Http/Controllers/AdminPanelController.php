@@ -66,6 +66,7 @@ class AdminPanelController extends Controller
     // find movie by given id, then take category id from request and attach both to create pivot
     function add_category_to_movie(Request $request, $movie_id){
         $movie = Movies::find($movie_id);
+        
         $movie->categories()->attach($request->input('categories'));
 
         $movie_categories = $movie->Categories;
