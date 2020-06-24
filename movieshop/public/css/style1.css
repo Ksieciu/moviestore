@@ -52,6 +52,7 @@ nav a{
     float: right;
     letter-spacing: 0.1vh;
     list-style: none;
+    padding: 0.25em 0.75em;
 }
 
 .nav-right img{
@@ -68,7 +69,23 @@ nav a{
     letter-spacing: 0.3vh;
     font-size: 1.8vh;
 }
+#back{
+    min-height: 22px;
+    color: black;
+    float: left;
+    margin-left: 5%;
+    font-size: 0.8em;
+    min-width: 10ch;
+    min-height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-emphasis: bold;
+    font-family: 'Merriweather', serif;
+    margin-bottom:10px;
 
+}
 
 
 .nav-left ul{
@@ -547,7 +564,7 @@ nav a{
 .update-btn{
         background-color: white;
         color: black;
-        font-size: 0.6em;
+        font-size: 0.8em;
         border-radius: 8px;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
         padding: 0.25em 0.75em;
@@ -556,26 +573,87 @@ nav a{
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Cinzel', serif;
         cursor: pointer;
         text-emphasis: bold;
+        font-family: 'Merriweather', serif;
+
+
      }
 
-     .update-btn:hover{
+#update-btn1{
+    background-color: white;
+    color: black;
+    font-size: 0.8em;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    padding: 0.25em 0.75em;
+    min-width: 10ch;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-emphasis: bold;
+    font-family: 'Merriweather', serif;
+    margin-left:25%;
+
+
+ }
+
+ .x-btn{
+     color: white;
+     background-color: red;
+     border-radius: 30%;
+ }
+
+
+ #update-btn1:hover{
+    background-color: green;
+    color: white;
+    border: green;
+ }
+
+ .update-btn:hover{
         background-color: green;
          color: white;
          border: green;
      }
 
-}
+
 .checkout-button-container{
     margin: 3%;
+}
+.input-box-details{
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 0px,50px;
+    color:black ;
+    white-space: nowrap;
+    resize: vertical;
+    text-align: center;
+    font-size: 0.8em;
+    overflow: auto;
+    width: 60%;
+}
+
+.input-box-details:focus{
+    border: 2px solid green;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: yellowgreen;
+
+
 }
 
 .shipping-info-container{
     padding: 1%;
     margin: 1%;
     background-color: whitesmoke;
+    align-items: center;
+    text-align: center;
 }
 
 .shipping-title{

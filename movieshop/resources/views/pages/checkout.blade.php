@@ -1,7 +1,7 @@
 @extends('layouts.navbar')
 
 @section('content')
-    <div class="cart-page-header">Checkout</div>
+    <div class="cart-page-header">Szczegóły zamówienia</div>
     
     <div class="cart-inner-page-container">
         

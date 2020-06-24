@@ -157,9 +157,12 @@ nav a{
         border-radius: 10px;
         float: left;
         width: 45%;
-        height: 50%;
-        
-        
+        height: 50%;   
+     }
+
+     a {
+         text-decoration: none;
+
      }
      .container-2 {
         background-color: white;
@@ -215,7 +218,6 @@ nav a{
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Cinzel', serif;
 
        cursor: pointer;
     text-emphasis: bold;
@@ -236,9 +238,7 @@ nav a{
         padding: 0.25em 0.75em;
         min-width: 10ch;
         min-height: 44px;
-        
         align-items: center;
-        font-family: 'Cinzel', serif;
         text-align: center;
         cursor: pointer;
 
@@ -250,18 +250,30 @@ nav a{
         border: green;
     }
 
-    button:hover{
-            background-color: green;
-            color: white;
-            border: green;
-        }
-    
-    #delete{
+    .delete{
         float: right;
-        margin-right: 0.2em;
+        margin-left: 0.2em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        min-height: 22px;
+
     }
 
-    #edit{
+    .edit{
         float:left;
         margin-left: 0.2em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        min-height: 22px;
+    }
+
+    .edit:hover{
+        background-color: green;
+        color: white;      
+    }
+
+    .delete:hover{
+        background-color: red;
+        color: white;
+
     }

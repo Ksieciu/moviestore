@@ -32,7 +32,7 @@
                                 Opis: <br>
                                 <input class="input-box-details" name="description">
                             </div><br>
-                            <button type="submit" class="update-btn" value="Add movie" name="update_info">Add movie</button>
+                            <button type="submit" class="update-btn" value="Add movie" name="update_info">Dodaj film</button>
                         </form><br>
                     </article>
                 </div>

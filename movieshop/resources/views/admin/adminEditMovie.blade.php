@@ -1,7 +1,7 @@
 @extends('layouts.navbar')
 
 @section('content')
-    <div class="movie-info-page-header">Informacje o filmie</div>
+    <div class="movie-info-page-header">Informacje o filmie</div>                       
     <div class="page-container">
         <div class="movie-info-inner-page-container">
             <div class="movie-all-info-border">
@@ -36,27 +36,27 @@
                                 Opis: <br>
                                 <input class="input-box-details" name="description" value="{{ $movie->description}}" required>
                             </div><br>
-                            <button type="submit" class="update-btn" value="Update Movie" name="update_info">Update Movie</button>
+                            <button type="submit" id="update-btn1" value="Update Movie" name="update_info">Aktualizuj film</button>
                         </form><br>
 
                         <form method="POST"></form>
                         @csrf
                         <div class="movie-categories-container">
-                            Kategorie:<br> 
+                            Kategorie:<br> <br>
                             @foreach($movie_categories as $movie_category)
                                 @if (!$loop->last)
                                     <form action="{{route('admin.deleteCategory', [$movie->id, $movie_category->id])}}" method="POST">
                                         {{ $movie_category->name }}
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit">Delete</button>               
+                                        <button class="delete" type="submit">Usuń</button>               
                                     </form>
                                 @else
                                     <form action="{{route('admin.deleteCategory', [$movie->id, $movie_category->id])}}" method="POST">
                                         {{ $movie_category->name }}
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit">Delete</button>               
+                                        <button type="submit">Usuń</button>               
                                     </form><br>
                                 @endif
                             @endforeach
@@ -68,12 +68,11 @@
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                                 </select>
-                                <div><button type="submit" name="add_category">Add</div>
+                                <div><button type="submit" name="add_category">Dodaj</div>
                             </form>
                         </div><br>
-                    </article>
-                </div>
-            </div>
+                    </article>    
+            </div><div><a href="{{ route('admin.listMovies')}}"><button id="back" type="submit" name="add_category"><-</div>    
         </div>
     </div>
 @endsection

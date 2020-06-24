@@ -140,16 +140,16 @@ nav a{
         margin-right: 15%;
 
      }
-
-     .form-check{
-        
-     }
-
-     .label-style {
-
-        
-     }
-
+     .nav-right{
+        margin-right: 9%;
+        display: flex;
+        justify-content: space-around;
+        width: 15%;
+        float: right;
+        letter-spacing: 0.1vh;
+        list-style: none;
+        padding: 0.25em 0.75em;
+    }
      .form-control {
         
         margin: 8px 0;
@@ -187,7 +187,6 @@ nav a{
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Cinzel', serif;
 
        cursor: pointer;
     text-emphasis: bold;
