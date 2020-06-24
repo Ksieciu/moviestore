@@ -17,23 +17,23 @@
                         @method('PUT')
                         <div class="movie-icon-url-container">
                             Imię:<br>
-                            <input class="input-box-details" name="name">
+                            <input class="input-box-details" name="name" required>
                         </div><br>
                         <div class="movie-title-container">
                             Nazwisko:<br> 
-                            <input class="input-box-details" name="surname">
+                            <input class="input-box-details" name="surname" required>
                         </div><br>
                         <div class="movie-realese-date-container">
                             Kraj:<br>
-                            <input class="input-box-details" name="country">
+                            <input class="input-box-details" name="country" required>
                         </div><br>
                         <div class="movie-realese-date-container">
                             Miasto:<br>
-                            <input class="input-box-details" name="city">
+                            <input class="input-box-details" name="city" required>
                         </div><br>
                         <div class="movie-realese-date-container">
                             Ulica:<br>
-                            <input class="input-box-details" name="street">
+                            <input class="input-box-details" name="street" required>
                         </div><br>
                         <div class="movie-realese-date-container">
                             <label for="categories">Płatność: </label><br>
@@ -53,23 +53,23 @@
                         </div><br>
                         <div class="movie-icon-url-container">
                             Imię:<br>
-                            <input class="input-box-details" name="name" value="{{ $shippingInfo[0]->name }}">
+                            <input class="input-box-details" name="name" value="{{ $shippingInfo[0]->name }}" required>
                         </div><br>
                         <div class="movie-title-container">
                             Nazwisko:<br> 
-                            <input class="input-box-details" name="surname" value="{{ $shippingInfo[0]->surname }}">
+                            <input class="input-box-details" name="surname" value="{{ $shippingInfo[0]->surname }}" required>
                         </div><br>
                         <div class="movie-realese-date-container">
                             Kraj:<br>
-                            <input class="input-box-details" name="country" value="{{ $shippingInfo[0]->country }}">
+                            <input class="input-box-details" name="country" value="{{ $shippingInfo[0]->country }}" required>
                         </div><br>
                         <div class="movie-realese-date-container">
                             Miasto:<br>
-                            <input class="input-box-details" name="city" value="{{ $shippingInfo[0]->city }}">
+                            <input class="input-box-details" name="city" value="{{ $shippingInfo[0]->city }}" required>
                         </div><br>
                         <div class="movie-realese-date-container">
                             Ulica:<br>
-                            <input class="input-box-details" name="street" value="{{ $shippingInfo[0]->street }}">
+                            <input class="input-box-details" name="street" value="{{ $shippingInfo[0]->street }}" required>
                         </div><br>
                         <div class="movie-realese-date-container">
                             <label for="categories">Płatność: </label><br>
