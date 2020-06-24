@@ -28,6 +28,9 @@ class AdminPanelController extends Controller
 
     // update all info of movie based in sent POST input(with PUT method) and given id
     function update_movie(Request $request, $id){
+
+        // if($request->has('update_info')){
+        // }
         $movie = Movies::find($id);
         $movie->title = $request->input('title');
         $movie->picture = $request->input('picture');
@@ -39,23 +42,6 @@ class AdminPanelController extends Controller
         $categories = Categories::all();
 
         return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
-    }
-
-    // add to db movie with data taken from post form inputs, return created movie page
-    function create_movie(Request $request){
-        $movie = new Movies;
-        $movie->title = $request->input('title');
-        $movie->picture = $request->input('picture');
-        $movie->release_date = $request->input('release_date');
-        $movie->price = $request->input('price');
-        $movie->description = $request->input('description');
-        $movie->save();
-
-        $movie_categories = $movie->Categories;
-        $categories = Categories::all();
-
-        return redirect()->route('admin.showMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
-        // return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
     }
 
     // delete movie with given id
@@ -88,7 +74,22 @@ class AdminPanelController extends Controller
         return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
     }
 
-    
+    // add to db movie with data taken from post form inputs, return created movie page
+    function create_movie(Request $request){
+        $movie = new Movies;
+        $movie->title = $request->input('title');
+        $movie->picture = $request->input('picture');
+        $movie->release_date = $request->input('release_date');
+        $movie->price = $request->input('price');
+        $movie->description = $request->input('description');
+        $movie->save();
+
+        $movie_categories = $movie->Categories;
+        $categories = Categories::all();
+
+        return redirect()->route('admin.showMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
+        // return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
+    }
 
 
 }

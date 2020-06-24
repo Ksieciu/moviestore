@@ -11,4 +11,5 @@ class Categories extends Model
     public function movies(){
         return $this->belongsToMany('App\Movies');
     }
+
 }
