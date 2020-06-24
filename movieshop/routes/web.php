@@ -40,13 +40,20 @@ Route::get('/cart/remove/{movie}', 'CartController@removeFromCart')->name('cart.
 Route::middleware('admin')->group(function(){
     Route::view('/admin', 'admin/admin');
 
-    // list of admin routes
+    // List all movies in catalog
     Route::get('/admin/movies', 'AdminPanelController@show_all')->name('admin.listMovies');
+
+    // Routes for showing, updating and deleting movies from catalog
     Route::get('/admin/movies/{movie}', 'AdminPanelController@show_movie')->name('admin.showMovie');
     Route::put('/admin/movies/{movie}', 'AdminPanelController@update_movie')->name('admin.updateMovie');
+    Route::delete('/admin/movies/{movie}', 'AdminPanelController@delete_movie')->name('admin.deleteMovie');
     Route::post('/admin/movies/{movie}', 'AdminPanelController@add_category_to_movie')->name('admin.addCategory');
     Route::delete('/admin/movies/{movie}/{category}', 'AdminPanelController@delete_movie_category')->name('admin.deleteCategory');
-    Route::delete('/admin/movies/{movie}', 'AdminPanelController@delete_movie')->name('admin.deleteMovie');
+
+    // Adding new movie to catalog
+    Route::view('/admin/movie/create', 'admin/createMovie')->name('admin.createMovieForm');
+    Route::post('/admin/movie/create', 'AdminPanelController@create_movie')->name('admin.createMovie');
+
     // Route::get('/admin/accounts', controller)->('admin.accounts');
     // Route::get('/admin/orders', controller); ???
 

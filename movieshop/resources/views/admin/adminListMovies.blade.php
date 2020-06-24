@@ -16,8 +16,12 @@
                         <div class = "movie-picture-container">
                             <img src="{{ $movie->picture }}">
                         </div>
-                        <a href="{{ route('admin.showMovie', $movie->id) }}">EDIT</a>
-                        {{-- <a href="{{ route('admin.deleteMovie', $movie->id) }}">DELETE</a> --}}
+                        <article class="movie-info-container">
+                            <div class="movie-title">{{ $movie->title }}</div>
+                            Premiera: {{ $movie->release_date }}<br>
+                            Cena: {{ $movie->price }}<br>
+                        </article>
+                        <button><a href="{{ route('admin.showMovie', $movie->id) }}">EDIT</a></button>
                         <form action="{{route('admin.deleteMovie', $movie->id)}}" method="POST">
                             @method('DELETE')
                             @csrf
@@ -34,7 +38,9 @@
             {{ $movies->links() }}
         </div>
         <button type="submit" class="btn-add">
-            {{ __(' + Dodaj film') }}
+            <a href="{{ route('admin.createMovieForm') }}">
+                {{ __(' + Dodaj film') }}
+            </a>
         </button><br> 
     </div>
    
