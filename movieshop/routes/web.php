@@ -33,7 +33,8 @@ Route::get('/cart/remove/{movie}', 'CartController@removeFromCart')->name('cart.
 // Route::post('/cart/update/{movie}', 'CartController@update')->('cart.update');
 
 //checkout
-// Route::get('/checkout', 'CheckoutController@')->name('checkout')->middleware('auth');
+Route::get('/checkout', 'CartController@shippingInfo')->name('shippingForm')->middleware('auth');
+Route::put('/checkout', 'CartController@checkout')->name('checkoutAddress')->middleware('auth');
 
 
 //Admin panel routes with authorization

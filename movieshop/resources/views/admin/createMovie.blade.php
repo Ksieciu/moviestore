@@ -1,7 +1,7 @@
 @extends('layouts.navbar')
 
 @section('content')
-    <div class="movie-info-page-header">Dodaj nowy film do katalogu'</div>
+    <div class="movie-info-page-header">Dodaj nowy film do katalogu</div>
     <div class="page-container">
         <div class="movie-info-inner-page-container">
             <div class="movie-all-info-border">
@@ -9,7 +9,6 @@
                     <div class="movie-info-picture-container">
                     </div>
                     <article class="movie-article-all-info">
-                        {{-- <div class="login-header">{{ __('Dodaj nowy film do katalogu') }}</div> --}}
                         <form method="POST">
                             @csrf
                             <div class="movie-icon-url-container">
@@ -35,7 +34,6 @@
                             </div><br>
                             <button type="submit" class="update-btn" value="Add movie" name="update_info">Add movie</button>
                         </form><br>
-                        </div><br>
                     </article>
                 </div>
             </div>

@@ -20,7 +20,7 @@ class CreateShippingInfosTable extends Migration
             $table->string('surname');
             $table->string('country');
             $table->string('city');
-            $table->string('address');
+            $table->string('street');
             $table->timestamps();
         });
     }

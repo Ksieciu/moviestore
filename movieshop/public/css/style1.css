@@ -542,6 +542,19 @@ nav a{
     width: 20%;
 }
 
+.checkout-button-container{
+    margin: 3%;
+}
+
+.shipping-info-container{
+    padding: 1%;
+    margin: 1%;
+    background-color: whitesmoke;
+}
+
+.shipping-title{
+    font-size: 1.8vh;
+}
 
 @media only screen and (max-height: 700px){
     .movie-container{

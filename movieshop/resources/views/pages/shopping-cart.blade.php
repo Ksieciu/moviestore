@@ -59,6 +59,9 @@
                     <span class="Final-cost">Koszt całkowity: {{ $totalPrice + 12.99 }}</span>
                 </div>
             </div>
+            <div class="checkout-button-container">
+                <a href="{{ route('shippingForm') }}"><button>Checkout</button></a>
+            </div>
         </div>
     </div>
 

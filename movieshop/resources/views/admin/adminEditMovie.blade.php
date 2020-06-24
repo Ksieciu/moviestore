@@ -17,24 +17,24 @@
                             @csrf
                             <div class="movie-icon-url-container">
                                 Url plakatu:<br>
-                                <input class="input-box-details" name="picture" value="{{ $movie->picture}}">
+                                <input class="input-box-details" name="picture" value="{{ $movie->picture}}" required>
                             </div><br>
                             <div class="movie-title-container">
                                 Tytuł:<br> 
-                                <input class="input-box-details" name="title" value="{{ $movie->title}}">
+                                <input class="input-box-details" name="title" value="{{ $movie->title}}" required>
                             </div><br>
                             <div class="movie-realese-date-container">
                                 Data Premiery:<br>
-                                <input type="date" class="input-box-details" name="release_date" value="{{ $movie->release_date }}">
+                                <input type="date" class="input-box-details" name="release_date" value="{{ $movie->release_date }}" required>
                             </div><br>
                             <div class="movie-realese-date-container">
                                 Cena:<br>
-                                <input type="number" step="0.01" class="input-box-details" name="price" value="{{ $movie->price }}">
+                                <input type="number" step="0.01" class="input-box-details" name="price" value="{{ $movie->price }}" required>
                             </div><br>
                             
                             <div class="movie-description-container">
                                 Opis: <br>
-                                <input class="input-box-details" name="description" value="{{ $movie->description}}">
+                                <input class="input-box-details" name="description" value="{{ $movie->description}}" required>
                             </div><br>
                             <button type="submit" class="update-btn" value="Update Movie" name="update_info">Update Movie</button>
                         </form><br>
