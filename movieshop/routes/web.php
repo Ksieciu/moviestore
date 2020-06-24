@@ -2,40 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return redirect('/movies');
 });
 
-// odpowiedzialny za logowanie/rejestrację
+// Auth builtin routes
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
-//wyświetlanie filmów
+// showing movies
 Route::get('/movies', 'MoviesController@show_all')->name('movie.store');
 Route::post('/movies', 'MoviesController@show_by_category');
 Route::get('/movies/{movie}', 'MoviesController@show_one_movie')->name('show.movie');
 
-//dodawanie/usuwanie z koszyka, wyświetlanie
+// adding/removing from cart
 Route::get('/add/{movie}', 'CartController@addToCart')->name('cart.add');
 Route::get('/cart', 'CartController@showCart')->name('cart.show');
 Route::get('/cart/remove/{movie}', 'CartController@removeFromCart')->name('cart.remove');
-// Route::post('/cart/update/{movie}', 'CartController@update')->('cart.update');
 
 //checkout
 Route::get('/checkout', 'CartController@shippingInfo')->name('shippingForm')->middleware('auth');
 Route::put('/checkout', 'CartController@checkout')->name('checkoutAddress')->middleware('auth');
-
 
 //Admin panel routes with authorization
 Route::middleware('admin')->group(function(){
@@ -54,14 +41,11 @@ Route::middleware('admin')->group(function(){
     // Adding new movie to catalog
     Route::view('/admin/movie/create', 'admin/createMovie')->name('admin.createMovieForm');
     Route::post('/admin/movie/create', 'AdminPanelController@create_movie')->name('admin.createMovie');
-
-    // Route::get('/admin/accounts', controller)->('admin.accounts');
-    // Route::get('/admin/orders', controller); ???
-
 });
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
+// if wrong url then show string
 Route::fallback(function(){
     return "Wygląda na to, że zawędrowałeś za daleko!";
 });
