@@ -39,14 +39,16 @@
                             </span>
                         </a>
                     </li>
-                    <li class="dropdown-account-menu"> 
-                        <img src="{{ url('images/account.svg') }}">
-                        {{-- <ul class="dropdown-account-list">
-                            <li>Log In/Sign In</li>
-                            <li>My Account</li>
-                            <li>About</li>
-                        </ul> --}}
-                    </li>
+                    <div class="dropdown"> 
+                   <button class="dropbtn">     <img src="{{ url('images/account.svg') }}"> </button>
+                        <div class="dropdown-content"">
+                            <a href="/login">Logowanie</a>
+                            <a href="/register">Rejestracja</a>
+                            <a href="{{ route('logout') }}">Wyloguj</a>
+                           
+                        </div>
+                    
+                  
                 </ul>
             </nav>
         </header>

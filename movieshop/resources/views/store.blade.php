@@ -98,8 +98,9 @@
                             </article>
                         </a>
                         <a href="{{ route('cart.add', $movie->id) }}" id="add-to-basket">
-                            <div class="basket-add-container">
+                            <div class="basket-add-container" style="padding-bottom: 10px">
                                 <img src="{{ url('/images/shopping-bag-add.svg') }}">
+                                
                             </div>
                         </a>
                     </div>
