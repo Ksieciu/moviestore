@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="checkout-button-container">
-                <a href="{{ route('shippingForm') }}"><button>Checkout</button></a>
+                <a href="{{ route('shippingForm') }}"><button>Zamawiaj!</button></a>
             </div>
         </div>
     </div>

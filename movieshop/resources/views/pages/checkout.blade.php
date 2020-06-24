@@ -78,7 +78,7 @@
                                 <option value="bank transfer">Przelew</option>
                             </select>
                         </div><br>
-                        <button type="submit" class="update-btn" value="Confirm and Checkout" name="shipping_info">Confirm and Checkout</button><br>
+                        <button type="submit" class="update-btn" value="Confirm and Checkout" name="shipping_info">Przejdź do podsumowania</button><br>
                     </form>
                     @endif
                     
