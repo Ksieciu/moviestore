@@ -70,10 +70,11 @@ class AdminPanelController extends Controller
 
         $movie_categories = $movie->Categories;
         $categories = Categories::all();
-        
+
         return view('admin.adminEditMovie', ['movie'=>$movie, 'movie_categories'=>$movie_categories, 'categories'=>$categories]);
     }
 
+    // add to db movie with data taken from post form inputs, return created movie page
     function create_movie(Request $request){
         $movie = new Movies;
         $movie->title = $request->input('title');
