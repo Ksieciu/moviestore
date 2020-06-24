@@ -35,6 +35,7 @@
                             <div class="movie-info-add-to-cart">
                                 Dodaj do koszyka <img src="{{ url('/images/shopping-bag-add.svg') }}">
                             </div>
+                            <br>
                             </a>
                         </div>
                     </article>
