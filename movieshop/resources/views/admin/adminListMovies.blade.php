@@ -21,11 +21,11 @@
                             Premiera: {{ $movie->release_date }}<br>
                             Cena: {{ $movie->price }}<br>
                         </article>
-                        <button><a href="{{ route('admin.showMovie', $movie->id) }}">EDIT</a></button>
+                        <button id="edit"><a href="{{ route('admin.showMovie', $movie->id) }}">EDIT</a></button>
                         <form action="{{route('admin.deleteMovie', $movie->id)}}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <button type="submit">Delete</button>               
+                            <button id="delete" type="submit">Delete</button>               
                         </form>
                     </div>
                 </div>
