@@ -63,7 +63,6 @@ class CartController extends Controller
         $user = Auth::user();
         $shipping_data = ShippingInfo::where('user_id', $user->id)->get();
 
-        // dd($shipping_data);
         return view('pages.checkout', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice, 'shippingInfo' => $shipping_data]);
     }
 
@@ -84,24 +83,6 @@ class CartController extends Controller
             'city' => $request->input('city'),
             'street' => $request->input('street')]
         );
-        // if($shipping_data == NULL){
-        //     $shipping_data = new ShippingInfo;
-        //     $shipping_data->user_id = $user->id;
-        //     $shipping_data->name = $request->input('name');
-        //     $shipping_data->surname = $request->input('surname');
-        //     $shipping_data->country = $request->input('country');
-        //     $shipping_data->city = $request->input('city');
-        //     $shipping_data->street = $request->input('street');
-        //     $shipping_data->save();
-        // } else {
-            // $shipping_data->user_id = $shipping_data->user_id;
-            // $shipping_data->name = $request->input('name');
-            // $shipping_data->surname = $request->input('surname');
-            // $shipping_data->country = $request->input('country');
-            // $shipping_data->city = $request->input('city');
-            // $shipping_data->street = $request->input('street');
-            // $shipping_data->save();
-        // }
 
         $order = new Order;
         $order->user_id = $user->id;
